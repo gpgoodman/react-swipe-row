@@ -1,0 +1,42 @@
+{
+  "name": "react-swipe-row",
+  "version": "0.1.0",
+  "description": "A native-feeling horizontal scroll-snap card rail for React",
+  "license": "MIT",
+  "private": false,
+
+  "type": "module",
+
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+
+  "files": [
+    "dist"
+  ],
+
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+
+  "devDependencies": {
+    "@types/react": "^19.2.8",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+
+  "scripts": {
+    "build": "tsup && cp src/style.css dist/style.css",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist"
+  }
+}

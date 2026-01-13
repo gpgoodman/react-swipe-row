@@ -1,0 +1,87 @@
+/* react-swipe-row: minimal mechanics (unopinionated) */
+
+.rsr-root {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Horizontal rail */
+.rsr-scroller {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    /* layout */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: stretch;
+
+    /* prevents parent page swipe-back stealing horizontal scroll */
+    overscroll-behavior-x: contain;
+}
+
+/* Snap behavior */
+.rsr-snap {
+    scroll-snap-type: x mandatory;
+}
+
+.rsr-item {
+    align-self: stretch;
+}
+
+.rsr-snap-item {
+    scroll-snap-align: start;
+}
+
+/* Controls (neutral default styling) */
+.rsr-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.85);
+
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rsr-control:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.rsr-control:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.rsr-prev {
+    left: 8px;
+}
+
+.rsr-next {
+    right: 8px;
+}
+
+/* Optional: hide scrollbar in browsers that support it */
+.rsr-scroller {
+    scrollbar-width: none; /* Firefox */
+}
+.rsr-scroller::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
