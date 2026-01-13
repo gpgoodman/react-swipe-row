@@ -61,6 +61,7 @@
     "vitest": "^4.0.17"
   },
   "scripts": {
+    "prepublishOnly": "npm run test && npm run build",
     "build": "tsup && cp src/style.css dist/style.css",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
