@@ -1,6 +1,6 @@
 {
   "name": "@goodmanlabs/react-swipe-row",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Glenn Goodman",
   "description": "A native-feeling horizontal scroll-snap card rail for React",
   "license": "MIT",
