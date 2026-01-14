@@ -21,6 +21,7 @@
 
     /* prevents parent page swipe-back stealing horizontal scroll */
     overscroll-behavior-x: contain;
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Snap behavior */
@@ -36,37 +37,43 @@
     scroll-snap-align: start;
 }
 
-/* Controls (neutral default styling) */
-.rsr-control:not(.rsr-control--custom) {
+/* Always-on layout & behavior */
+.rsr-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    width: 36px;
-    height: 36px;
-    border-radius: 9999px;
-
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    background: rgba(255, 255, 255, 0.9);
-    color: rgba(0, 0, 0, 0.85);
-
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-.rsr-control:not(.rsr-control--custom):hover {
+/* Default visual skin (opt-out) */
+.rsr-control:not(.rsr-control--custom) {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Default hover (opt-out) */
+.rsr-control:not(.rsr-control--custom):hover:not(:disabled) {
     background: rgba(255, 255, 255, 1);
 }
 
+/* Always-on disabled behavior */
+.rsr-control:disabled {
+    cursor: default;
+}
+
+/* Default disabled visuals (opt-out) */
 .rsr-control:not(.rsr-control--custom):disabled {
     opacity: 0.45;
-    cursor: default;
 }
 
 .rsr-prev {
@@ -75,11 +82,6 @@
 
 .rsr-next {
     right: 8px;
-}
-
-/* Optional: hide scrollbar in browsers that support it */
-.rsr-scroller {
-    scrollbar-width: none; /* Firefox */
 }
 
 .rsr-scroller::-webkit-scrollbar {
