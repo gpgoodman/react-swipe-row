@@ -15,6 +15,8 @@ This was built to solve a common UI problem: you want a horizontally scrollable 
 - Optional left/right controls appear automatically on “desktop-like” pointers
 - Control styling (buttons) and item spacing are exposed via props (no need to target internal DOM or CSS)
 
+> *Written in TypeScript and ships with types; works in both TypeScript and plain JavaScript projects.*
+
 ---
 
 ## Install
@@ -43,7 +45,12 @@ export default function Example() {
   );
 }
 ```
-> Note: You must import the provided CSS for base layout and snapping behavior.
+> Note: *You must import the provided CSS for base layout, snapping behavior, and default control styling.
+For Next.js users, (App Router): import this CSS in app/layout.(js|tsx) (or your global stylesheet) per Next’s global CSS rules.*
+
+## Framework notes
+
+This component uses React hooks. In Next.js App Router, it’s treated as a client component automatically—no extra "use client" wrapper is needed to consume it. In non-Next React apps (Vite, CRA, Remix, etc.), this has no special impact; it behaves like a normal React component.
 
 ## Props
 
@@ -73,6 +80,12 @@ type SwipeRowClassNames = {
   nextButton?: string;    // next button
 };
 ```
+### `Styling controls (buttons)`
+
+SwipeRow ships with neutral default button styles.
+
+- If you provide any of classNames.controlButton, classNames.prevButton, or classNames.nextButton, the default button styling is automatically disabled so your classes take full control (no !important needed).
+- Use prevButton / nextButton for positioning (e.g. left-2, right-2) and controlButton for shared button styling.
 
 ## Accessibility & Behavior
 

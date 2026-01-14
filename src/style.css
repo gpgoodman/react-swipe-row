@@ -37,7 +37,7 @@
 }
 
 /* Controls (neutral default styling) */
-.rsr-control {
+.rsr-control:not(.rsr-control--custom) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -60,11 +60,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.rsr-control:hover {
+.rsr-control:not(.rsr-control--custom):hover {
     background: rgba(255, 255, 255, 1);
 }
 
-.rsr-control:disabled {
+.rsr-control:not(.rsr-control--custom):disabled {
     opacity: 0.45;
     cursor: default;
 }
@@ -81,6 +81,7 @@
 .rsr-scroller {
     scrollbar-width: none; /* Firefox */
 }
+
 .rsr-scroller::-webkit-scrollbar {
     width: 0;
     height: 0;

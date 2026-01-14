@@ -89,6 +89,9 @@ export default function SwipeRow({
         return React.Children.toArray(children);
     }, [items, children]);
 
+    const hasCustomControls =
+        !!classNames?.controlButton || !!classNames?.prevButton || !!classNames?.nextButton;
+
     // Enable/disable arrows based on scroll position
     useEffect(() => {
         const el = scrollerRef.current;
@@ -200,6 +203,7 @@ export default function SwipeRow({
                         aria-label="Scroll left"
                         className={cx(
                             'rsr-control',
+                            hasCustomControls && 'rsr-control--custom',
                             'rsr-prev',
                             classNames?.controlButton,
                             classNames?.prevButton
@@ -216,6 +220,7 @@ export default function SwipeRow({
                         aria-label="Scroll right"
                         className={cx(
                             'rsr-control',
+                            hasCustomControls && 'rsr-control--custom',
                             'rsr-next',
                             classNames?.controlButton,
                             classNames?.nextButton
