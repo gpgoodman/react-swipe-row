@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/*
+  Intentionally minimal global styles.
+  No theming, no color assumptions, no fonts.
+  The demo should not influence component appearance.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
