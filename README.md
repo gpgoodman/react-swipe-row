@@ -19,6 +19,15 @@ This was built to solve a common UI problem: you want a horizontally scrollable 
 
 ---
 
+## Live Demo
+
+👉 **https://react-swipe-row.vercel.app/**
+
+An interactive demo showing all supported props, behaviors, and styling hooks.
+Used in production on [campvue.com](https://campvue.com).
+
+---
+
 ## Install
 
 ```bash
