@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "@goodmanlabs/react-swipe-row/style.css";
 
 export const metadata: Metadata = {
     title: "react-swipe-row demo",
