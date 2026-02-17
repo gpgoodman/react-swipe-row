@@ -272,7 +272,7 @@ export default function Home() {
                         <div>
                             <div className="text-xs font-semibold text-zinc-400">1) Install</div>
                             <pre className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950 p-3 text-xs text-zinc-100">
-        <code>npm install @goodmanlabs/react-swipe-row</code>
+        <CodeBlock code={`npm install @goodmanlabs/react-swipe-row`} />
       </pre>
                         </div>
 
@@ -281,8 +281,8 @@ export default function Home() {
                                 2) Import the stylesheet (once)
                             </div>
                             <pre className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950 p-3 text-xs text-zinc-100">
-        <code>{`// app/layout.tsx
-import "@goodmanlabs/react-swipe-row/style.css";`}</code>
+                                <CodeBlock code={`// app/layout.tsx
+import "@goodmanlabs/react-swipe-row/style.css";`} />
       </pre>
                         </div>
 
@@ -291,7 +291,7 @@ import "@goodmanlabs/react-swipe-row/style.css";`}</code>
                                 3) Use the component
                             </div>
                             <pre className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950 p-3 text-xs text-zinc-100">
-        <code>{`"use client";
+                                <CodeBlock code={`"use client";
 
 import SwipeRow from "@goodmanlabs/react-swipe-row";
 
@@ -303,7 +303,20 @@ export function Example() {
       <div>Card 3</div>
     </SwipeRow>
   );
-}`}</code>
+}`} />
+{/*        <code>{`"use client";*/}
+
+{/*import SwipeRow from "@goodmanlabs/react-swipe-row";*/}
+
+{/*export function Example() {*/}
+{/*  return (*/}
+{/*    <SwipeRow ariaLabel="Featured items">*/}
+{/*      <div>Card 1</div>*/}
+{/*      <div>Card 2</div>*/}
+{/*      <div>Card 3</div>*/}
+{/*    </SwipeRow>*/}
+{/*  );*/}
+{/*}`}</code>*/}
       </pre>
                         </div>
                     </div>
